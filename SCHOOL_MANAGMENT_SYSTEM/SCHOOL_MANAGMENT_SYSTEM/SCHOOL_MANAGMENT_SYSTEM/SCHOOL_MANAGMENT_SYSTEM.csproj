@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5E35FEB-2D27-45AA-84E6-9116D7368826}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCHOOL_MANAGMENT_SYSTEM</RootNamespace>
+    <AssemblyName>SCHOOL_MANAGMENT_SYSTEM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllCrystalReportAttendance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllCrystalReportAttendance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AllReportStudent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllReportStudent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Attendence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attendence.Designer.cs">
+      <DependentUpon>Attendence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class.Designer.cs">
+      <DependentUpon>Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionClass.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAllAttendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAllAttendance.Designer.cs">
+      <DependentUpon>frmAllAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttendence.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAttendence.Designer.cs">
+      <DependentUpon>frmAttendence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmClass.Designer.cs">
+      <DependentUpon>frmClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmdashboards.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmdashboards.Designer.cs">
+      <DependentUpon>frmdashboards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmForget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmForget.Designer.cs">
+      <DependentUpon>FrmForget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmRegistration.Designer.cs">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmStaff.Designer.cs">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmSubject.Designer.cs">
+      <DependentUpon>frmSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeachers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmTeachers.Designer.cs">
+      <DependentUpon>frmTeachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDashboard.Designer.cs">
+      <DependentUpon>MyDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="profile.Designer.cs">
+      <DependentUpon>profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Splash Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash Screen.Designer.cs">
+      <DependentUpon>Splash Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff.Designer.cs">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student.Designer.cs">
+      <DependentUpon>Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentReport.Designer.cs">
+      <DependentUpon>StudentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSpecificReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentSpecificReport.Designer.cs">
+      <DependentUpon>StudentSpecificReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects.Designer.cs">
+      <DependentUpon>Subjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teachers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teachers.Designer.cs">
+      <DependentUpon>Teachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AllCrystalReportAttendance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AllCrystalReportAttendance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllReportStudent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AllReportStudent.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendence.resx">
+      <DependentUpon>Attendence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class.resx">
+      <DependentUpon>Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dASHBOARD.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAllAttendance.resx">
+      <DependentUpon>frmAllAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAttendence.resx">
+      <DependentUpon>frmAttendence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClass.resx">
+      <DependentUpon>frmClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmdashboards.resx">
+      <DependentUpon>frmdashboards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmForget.resx">
+      <DependentUpon>FrmForget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistration.resx">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaff.resx">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubject.resx">
+      <DependentUpon>frmSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeachers.resx">
+      <DependentUpon>frmTeachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDashboard.resx">
+      <DependentUpon>MyDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profile.resx">
+      <DependentUpon>profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash Screen.resx">
+      <DependentUpon>Splash Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff.resx">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student.resx">
+      <DependentUpon>Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentReport.resx">
+      <DependentUpon>StudentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSpecificReport.resx">
+      <DependentUpon>StudentSpecificReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects.resx">
+      <DependentUpon>Subjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teachers.resx">
+      <DependentUpon>Teachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View.resx">
+      <DependentUpon>View.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\webinar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginPicture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard_drw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard_drw1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduated1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\webinar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MINIMIZE1-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MINIMIZE1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginPicture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\webinar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduated2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginPicture2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete Icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-sign1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE-removebg-preview3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\webinar3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\webinar4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduated3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cleaning-staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginPicture3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hide1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SPLASH SCREEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SPLASH SCREEN1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SYL LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Generate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Generate1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Generate2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Generate3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Generate4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-sign2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduated4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verify1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\webinar5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Generate-removebg-preview.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
